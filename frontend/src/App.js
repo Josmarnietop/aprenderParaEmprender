@@ -9,6 +9,7 @@ import {
 import Home from "./pages/Home";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import logo from "./img/logo.jpg";
 //import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function App() {
@@ -16,7 +17,10 @@ export default function App() {
     <Router>
       <Navbar bg="dark" variant="dark" expand="md" className=''>
         <Navbar.Brand href="#home">
-            <Link to="/">Logo</Link>
+           
+            <Link to="/">
+            <img src={logo} alt="" className='w-25' />
+            </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

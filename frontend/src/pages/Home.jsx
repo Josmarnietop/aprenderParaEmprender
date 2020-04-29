@@ -5,7 +5,8 @@ import Row from 'react-bootstrap/Row';
 import Carousel from 'react-bootstrap/Carousel';
 import Col from 'react-bootstrap/Col';
 //import Card from 'react-bootstrap/Card'
-import fotoportada from '../img/fotoportada.jpg';
+import fotoportada from "../img/fotoportada.jpg";
+
 import Alert from 'react-bootstrap/Alert';
 
 export default function Home() {
