@@ -5,19 +5,25 @@ import Row from 'react-bootstrap/Row';
 import Carousel from 'react-bootstrap/Carousel';
 import Col from 'react-bootstrap/Col';
 //import Card from 'react-bootstrap/Card'
+import fotoportada from '../img/fotoportada.jpg';
+import Alert from 'react-bootstrap/Alert';
 
 export default function Home() {
   return (
     <Container>
-        <Row className=' d-flex flex-row'>
-        <Col sm={4} className='p-2 border border-success'>
-          foto face
-</Col>
-        <Col sm={8} className='p-2 border border-success'>
+      <Alert variant='info' className='my-3'>
+        Ultima noticia bla bla bla
+  </Alert>
+
+      <Row className='my-3 d-flex flex-row'>
+        <Col className='p-2 border border-success'>
+          <img src={fotoportada} alt="" className="img-fluid" />
+        </Col>
+        {/* <Col sm={8} className='p-2 border border-success'>
           ultima noticia publica
-</Col>
+</Col> */}
       </Row>
-      <Row>
+      <Row className='my-3'>
         <Carousel>
           <Carousel.Item>
             <img
@@ -56,7 +62,7 @@ export default function Home() {
           </Carousel.Item>
         </Carousel>
       </Row>
-      <Row className='d-flex flex-row'>
+      <Row className='d-flex flex-row my-3'>
         <Col className='col p-2 border border-success'>
           cursos
 </Col>
@@ -64,7 +70,7 @@ export default function Home() {
           concursos
 </Col>
       </Row>
-      <Row>
+      <Row className='my-3'>
         <Carousel>
           <Carousel.Item>
             <img
