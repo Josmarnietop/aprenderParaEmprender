@@ -4,6 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
+const bodyParser = require('body-parser');
+//const multer = require('multer');
+//const upload = multer();
 
 
 const mongoose = require('mongoose');
@@ -25,6 +28,18 @@ app.use(cors());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+// for parsing application/json
+//app.use(bodyParser.json()); 
+
+// for parsing application/xwww-
+//app.use(bodyParser.urlencoded({ extended: true })); 
+//form-urlencoded
+
+// for parsing multipart/form-data
+//app.use(upload.array()); 
+//app.use(express.static('public'));
+
 
 app.use(logger('dev'));
 app.use(express.json());

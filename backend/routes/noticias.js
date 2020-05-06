@@ -4,16 +4,29 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Types.ObjectId;
 const multer  = require('multer');
+const bodyParser = require('body-parser');
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './imagenes')
   },
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now())
+   cb(null, Date.now() + '-' + file.originalname )
   }
 })
  
+var app = express();
 const upload = multer({ storage: storage })
+
+// for parsing application/json
+app.use(bodyParser.json()); 
+
+// for parsing application/xwww-
+app.use(bodyParser.urlencoded({ extended: true })); 
+//form-urlencoded
+
+// for parsing multipart/form-data
+app.use(upload.array()); 
+app.use(express.static('public'));
 
 
 const NoticiasSchema = new Schema({
@@ -26,6 +39,8 @@ tipo: String,
 }, { timestamps: true });
 
 const NoticiasModel = mongoose.model('Noticias', NoticiasSchema);
+
+const prueba = (req, res, next) => console.log(req);
 
 /* GET noticias listing. */
 router.get('/', async(req, res, next) => {
@@ -90,7 +105,7 @@ router.put('/:idNoticia', async(req, res) => {
 });
 
 router.post('/', upload.single('imagen'), (req, res, next) => {
-    console.log('req: ', req.file);
+    console.log('req: ', req.body);
     const urlImagen = 'http://localhost:3000/imagenes/' + req.file.filename;
     const NoticiaNueva = new NoticiasModel({
         _id: new ObjectId,
