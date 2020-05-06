@@ -3,12 +3,24 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Types.ObjectId;
+const multer  = require('multer');
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './imagenes')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now())
+  }
+})
+ 
+const upload = multer({ storage: storage })
 
 
 const NoticiasSchema = new Schema({
 _id: ObjectId,
 titulo: String,
 contenido: String,
+link: String,
 imagen: String,
 tipo: String,
 }, { timestamps: true });
@@ -19,6 +31,36 @@ const NoticiasModel = mongoose.model('Noticias', NoticiasSchema);
 router.get('/', async(req, res, next) => {
     try {
         const respuesta = await NoticiasModel.find();
+        res.json(respuesta)
+    } catch (error) {
+        res.status(500).json({ mensaje: 'error, no se encontraron datos', tipo: error })
+    }
+});
+
+/* AQUI HACER EL FILTRO PUNTUAL PARA LOS LINKS*/
+router.get('/links', async(req, res, next) => {
+    try {
+        const respuesta = await NoticiasModel.find({tipo: 'link'});
+        res.json(respuesta)
+    } catch (error) {
+        res.status(500).json({ mensaje: 'error, no se encontraron datos', tipo: error })
+    }
+});
+
+/* AQUI HACER EL FILTRO PUNTUAL PARA LOS CURSOS*/
+router.get('/cursos', async(req, res, next) => {
+    try {
+        const respuesta = await NoticiasModel.find({tipo: 'curso'});
+        res.json(respuesta)
+    } catch (error) {
+        res.status(500).json({ mensaje: 'error, no se encontraron datos', tipo: error })
+    }
+});
+
+/* AQUI HACER EL FILTRO PUNTUAL PARA LOS CONCURSOS*/
+router.get('/concursos', async(req, res, next) => {
+    try {
+        const respuesta = await NoticiasModel.find({tipo: 'concurso'});
         res.json(respuesta)
     } catch (error) {
         res.status(500).json({ mensaje: 'error, no se encontraron datos', tipo: error })
@@ -47,12 +89,16 @@ router.put('/:idNoticia', async(req, res) => {
     }
 });
 
-router.post('/', (req, res, next) => {
+router.post('/', upload.single('imagen'), (req, res, next) => {
+    console.log('req: ', req.file);
+    const urlImagen = 'http://localhost:3000/imagenes/' + req.file.filename;
     const NoticiaNueva = new NoticiasModel({
         _id: new ObjectId,
         titulo: req.body.titulo,
         contenido: req.body.contenido,
-        tipo: req.body.tipo
+        link: req.body.link,
+        tipo: req.body.tipo,
+        imagen: urlImagen
     });
     NoticiaNueva.save()
         .then(respuesta => {

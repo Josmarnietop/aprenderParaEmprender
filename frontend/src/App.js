@@ -17,12 +17,12 @@ export default function App() {
   return (
     <Router>
       <Navbar bg="dark" variant="dark" expand="md" >
-        <Navbar.Brand href="#home">
 
           <Link to="/">
             <img src={logo} alt="" width="50" height="50" />
           </Link>
-        </Navbar.Brand>
+        {/* <Navbar.Brand href="#home">
+        </Navbar.Brand> */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav justify-content-end">
           <Nav className="mr-auto align-items-center justify-content-end">

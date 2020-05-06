@@ -1,15 +1,30 @@
 //@ts-check
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Carousel from 'react-bootstrap/Carousel';
 import Col from 'react-bootstrap/Col';
 //import Card from 'react-bootstrap/Card'
 import fotoportada from "../img/fotoportada.jpg";
-
 import Alert from 'react-bootstrap/Alert';
-
+import axios from "axios";
+import defaultimg from "../img/defaultimg.jpg";
 export default function Home() {
+  const [links, setLinks] = useState([]);
+
+  useEffect(() => {
+    const fetchLinks = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/noticias/links");
+        console.log(response.data);
+        setLinks(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchLinks();
+  }, []);
+
   return (
     <Container>
       <Alert variant='info' className='my-3'>
@@ -26,23 +41,33 @@ export default function Home() {
       </Row>
       <Row className='my-3'>
         <Carousel>
-          <Carousel.Item>
-            <img
+          {links.map((link) => (
+            <Carousel.Item
+              key={link._id}
+              className="flex justify-between p-2 cursor-pointer"
+            >
+              <p>{link.titulo}</p>
+              <p>{link.contenido}</p>
+            </Carousel.Item>
+          ))}
+          {/* <Carousel.Item>
+             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=First slide&bg=373940"
+            src={defaultimg}
               alt="First slide"
-            />
+            /> 
+
             <Carousel.Caption>
               <h3>First slide label</h3>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img
+             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Second slide&bg=282c34"
+              src={defaultimg}
               alt="Third slide"
-            />
+            /> 
 
             <Carousel.Caption>
               <h3>Second slide label</h3>
@@ -50,17 +75,17 @@ export default function Home() {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img
+             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Third slide&bg=20232a"
+              src={defaultimg}
               alt="Third slide"
-            />
+            /> 
 
             <Carousel.Caption>
               <h3>Third slide label</h3>
               <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
             </Carousel.Caption>
-          </Carousel.Item>
+          </Carousel.Item> */}
         </Carousel>
       </Row>
       <Row className='d-flex flex-row my-3'>
@@ -76,7 +101,7 @@ export default function Home() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=First slide&bg=373940"
+              src={defaultimg}
               alt="First slide"
             />
             <Carousel.Caption>
@@ -87,7 +112,7 @@ export default function Home() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Second slide&bg=282c34"
+              src={defaultimg}
               alt="Third slide"
             />
 
@@ -99,7 +124,7 @@ export default function Home() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Third slide&bg=20232a"
+              src={defaultimg}
               alt="Third slide"
             />
 
