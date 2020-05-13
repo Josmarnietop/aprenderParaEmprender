@@ -33,7 +33,7 @@ const NoticiasSchema = new Schema({
 _id: ObjectId,
 titulo: String,
 contenido: String,
-link: String,
+urlLink: String,
 imagen: String,
 tipo: String,
 }, { timestamps: true });
@@ -111,7 +111,7 @@ router.post('/', upload.single('imagen'), (req, res, next) => {
         _id: new ObjectId,
         titulo: req.body.titulo,
         contenido: req.body.contenido,
-        link: req.body.link,
+        urlLink: req.body.link,
         tipo: req.body.tipo,
         imagen: urlImagen
     });

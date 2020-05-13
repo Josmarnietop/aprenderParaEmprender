@@ -1,2 +1,5 @@
-- ARREGLAR EL GIT: copiar todo el proyecto actual en otra carpeta, volver a hacer el git clone y reemplazar eso con lo copiado anteriormente
-- configurando el multer, que por alguna razon no me esta subiendo la imagen y me da mal el filename
+- fix la poronga del tamaño de las imagenes en el carousel del home: probar con poner la imagen dentro de un div como fondo, la centras y q se vea lo q se vea
+	-> corregir en el background-image: "xxxxxxxxxx" que esta andando mal x el react
+
+
+*JAPANESE-STYLED WEBSITE DESIGN?*

@@ -4,7 +4,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Carousel from 'react-bootstrap/Carousel';
 import Col from 'react-bootstrap/Col';
-//import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 import fotoportada from "../img/fotoportada.jpg";
 import Alert from 'react-bootstrap/Alert';
 import axios from "axios";
@@ -46,8 +47,31 @@ export default function Home() {
               key={link._id}
               className="flex justify-between p-2 cursor-pointer"
             >
-              <p>{link.titulo}</p>
-              <p>{link.contenido}</p>
+              <Card style={{ width: '100%' }}>
+                <div className="row">
+
+                <div className="col-md-4 p-5" style={{
+                  backgroundImage: `url(${link.imagen})`,
+                  backgroundPosition: "center center",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                  width: "15rem",
+                  height: "15rem",
+                  margin: "auto"
+                }}>
+                </div>
+                <Card.Body className="col-md-8">
+                  <Card.Title>{link.titulo}</Card.Title>
+                  <Card.Text>
+                    {link.contenido}
+                  </Card.Text>
+                  <Button variant="primary" href={`${link.urlLink}`}>Leer Mas</Button>
+                </Card.Body>
+                </div>
+              </Card>
+              {/* <img src={link.imagen} alt='imagen' className="img-fluid" max-height="100em" />
+              <h5>{link.titulo}</h5>
+              <a href={`${link.urlLink}`} >{link.urlLink}</a> */}
             </Carousel.Item>
           ))}
           {/* <Carousel.Item>
