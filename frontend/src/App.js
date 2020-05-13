@@ -16,6 +16,9 @@ import Container from 'react-bootstrap/Container';
 export default function App() {
   return (
     <Router>
+      <div style={{backgroundColor: "#2eaf7d"}}>
+
+     
       <Navbar bg="dark" variant="dark" expand="md" >
 
           <Link to="/">
@@ -112,6 +115,7 @@ export default function App() {
             </div>
   </footer>
       </Container>
+      </div>
     </Router>
   );
 }

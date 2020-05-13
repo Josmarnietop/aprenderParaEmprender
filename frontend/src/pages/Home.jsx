@@ -10,6 +10,7 @@ import fotoportada from "../img/fotoportada.jpg";
 import Alert from 'react-bootstrap/Alert';
 import axios from "axios";
 import defaultimg from "../img/defaultimg.jpg";
+import fondo from "../img/background.jpg";
 export default function Home() {
   const [links, setLinks] = useState([]);
 
@@ -27,7 +28,13 @@ export default function Home() {
   }, []);
 
   return (
-    <Container>
+    <Container style={{ backgroundImage: `url(${fondo})`,
+    backgroundPosition: "center center",
+    backgroundRepeat: "repeat",
+    backgroundSize: "cover",
+    width: "100%",
+    height: "100%",
+    margin: "auto"}}>
       <Alert variant='info' className='my-3'>
         Ultima noticia bla bla bla
   </Alert>
@@ -48,7 +55,7 @@ export default function Home() {
               className="flex justify-between p-2 cursor-pointer"
             >
               <Card style={{ width: '100%' }}>
-                <div className="row">
+                <div className="row p-3">
 
                 <div className="col-md-4 p-5" style={{
                   backgroundImage: `url(${link.imagen})`,
