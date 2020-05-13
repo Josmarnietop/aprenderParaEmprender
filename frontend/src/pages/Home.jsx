@@ -28,13 +28,15 @@ export default function Home() {
   }, []);
 
   return (
-    <Container style={{ backgroundImage: `url(${fondo})`,
-    backgroundPosition: "center center",
-    backgroundRepeat: "repeat",
-    backgroundSize: "cover",
-    width: "100%",
-    height: "100%",
-    margin: "auto"}}>
+    <Container style={{
+      backgroundImage: `url(${fondo})`,
+      backgroundPosition: "center center",
+      backgroundRepeat: "repeat",
+      backgroundSize: "cover",
+      width: "100%",
+      height: "100%",
+      margin: "auto"
+    }}>
       <Alert variant='info' className='my-3'>
         Ultima noticia bla bla bla
   </Alert>
@@ -57,23 +59,23 @@ export default function Home() {
               <Card style={{ width: '100%' }}>
                 <div className="row p-3">
 
-                <div className="col-md-4 p-5" style={{
-                  backgroundImage: `url(${link.imagen})`,
-                  backgroundPosition: "center center",
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "cover",
-                  width: "15rem",
-                  height: "15rem",
-                  margin: "auto"
-                }}>
-                </div>
-                <Card.Body className="col-md-8">
-                  <Card.Title>{link.titulo}</Card.Title>
-                  <Card.Text>
-                    {link.contenido}
-                  </Card.Text>
-                  <Button variant="primary" href={`${link.urlLink}`}>Leer Mas</Button>
-                </Card.Body>
+                  <div className="col-md-4 p-5" style={{
+                    backgroundImage: `url(${link.imagen})`,
+                    backgroundPosition: "center center",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    width: "15rem",
+                    height: "15rem",
+                    margin: "auto"
+                  }}>
+                  </div>
+                  <Card.Body className="col-md-8">
+                    <Card.Title>{link.titulo}</Card.Title>
+                    <Card.Text>
+                      {link.contenido}
+                    </Card.Text>
+                    <Button variant="primary" href={`${link.urlLink}`}>Leer Mas</Button>
+                  </Card.Body>
                 </div>
               </Card>
               {/* <img src={link.imagen} alt='imagen' className="img-fluid" max-height="100em" />
@@ -128,24 +130,40 @@ export default function Home() {
 </Col>
       </Row>
       <Row className='my-3'>
-        <Carousel>
-          <Carousel.Item>
-            <img
+        <Carousel className=" d-flex align-items-center justify-content-center">
+          <Carousel.Item >
+            <div className="col p-1" style={{
+              backgroundImage: `url(${defaultimg})`,
+              backgroundPosition: "center center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              width: "40rem",
+              height: "auto",
+              minHeight: "15rem",
+              margin: "auto"
+            }}>
+            </div>
+            {/* <img
               className="d-block w-100"
               src={defaultimg}
               alt="First slide"
-            />
+            /> */}
             <Carousel.Caption>
               <h3>First slide label</h3>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={defaultimg}
-              alt="Third slide"
-            />
+          <div className="col p-5" style={{
+              backgroundImage: `url(${defaultimg})`,
+              backgroundPosition: "center center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              width: "50vw",
+              height: "15rem",
+              margin: "auto"
+            }}>
+            </div>
 
             <Carousel.Caption>
               <h3>Second slide label</h3>
@@ -153,11 +171,16 @@ export default function Home() {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={defaultimg}
-              alt="Third slide"
-            />
+          <div className="col p-5" style={{
+              backgroundImage: `url(${defaultimg})`,
+              backgroundPosition: "center center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              width: "50vw",
+              height: "15rem",
+              margin: "auto"
+            }}>
+            </div>
 
             <Carousel.Caption>
               <h3>Third slide label</h3>
