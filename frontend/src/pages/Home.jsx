@@ -11,6 +11,7 @@ import Alert from 'react-bootstrap/Alert';
 import axios from "axios";
 import defaultimg from "../img/defaultimg.jpg";
 import fondo from "../img/background.jpg";
+
 export default function Home() {
   const [links, setLinks] = useState([]);
 
@@ -35,9 +36,11 @@ export default function Home() {
       backgroundSize: "cover",
       width: "100%",
       height: "100%",
-      margin: "auto"
+      margin: "auto",
+      paddingTop: "1%",
+      paddingBottom: "1%"
     }}>
-      <Alert variant='info' className='my-3'>
+      <Alert variant='info' className='mt-3'>
         Ultima noticia bla bla bla
   </Alert>
 
@@ -130,61 +133,74 @@ export default function Home() {
 </Col>
       </Row>
       <Row className='my-3'>
-        <Carousel className=" d-flex align-items-center justify-content-center">
-          <Carousel.Item >
-            <div className="col p-1" style={{
-              backgroundImage: `url(${defaultimg})`,
-              backgroundPosition: "center center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              width: "40rem",
-              height: "auto",
-              minHeight: "15rem",
-              margin: "auto"
-            }}>
+        <Carousel className=" d-flex align-items-center justify-content-center w-100">
+          <Carousel.Item className="w-100">
+            <div className="card bg-dark text-white w-100">
+              <div style={{
+                backgroundImage: `url(${defaultimg})`,
+                backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                height: "auto",
+                width: "auto",
+                minHeight: "15rem",
+                margin: "auto"
+              }}>
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p className="card-text">Last updated 3 mins ago</p>
+              </div>
             </div>
-            {/* <img
-              className="d-block w-100"
-              src={defaultimg}
-              alt="First slide"
-            /> */}
-            <Carousel.Caption>
+
+            <Carousel.Caption >
               <h3>First slide label</h3>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
-          <Carousel.Item>
-          <div className="col p-5" style={{
-              backgroundImage: `url(${defaultimg})`,
-              backgroundPosition: "center center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              width: "50vw",
-              height: "15rem",
-              margin: "auto"
-            }}>
+          <Carousel.Item >
+            <div className="card bg-dark text-white">
+              <div style={{
+                backgroundImage: `url(${defaultimg})`,
+                backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                height: "auto",
+                width: "auto",
+                minHeight: "15rem",
+                margin: "auto"
+              }}>
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p className="card-text">Last updated 3 mins ago</p>
+              </div>
             </div>
 
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <Carousel.Caption >
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
-          <Carousel.Item>
-          <div className="col p-5" style={{
-              backgroundImage: `url(${defaultimg})`,
-              backgroundPosition: "center center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              width: "50vw",
-              height: "15rem",
-              margin: "auto"
-            }}>
+          <Carousel.Item >
+            <div className="card bg-dark text-white">
+              <div style={{
+                backgroundImage: `url(${defaultimg})`,
+                backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                height: "auto",
+                width: "auto",
+                minHeight: "15rem",
+                margin: "auto"
+              }}>
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p className="card-text">Last updated 3 mins ago</p>
+              </div>
             </div>
 
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <Carousel.Caption >
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

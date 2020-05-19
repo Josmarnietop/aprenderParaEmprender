@@ -1,5 +1,7 @@
-- fix la poronga del tamaño de las imagenes en el carousel del home: probar con poner la imagen dentro de un div como fondo, la centras y q se vea lo q se vea
-	-> corregir en el background-image: "xxxxxxxxxx" que esta andando mal x el react
+
+- en la pagina de alumnos, un alert arriba para q informe si no esta inscripto, y si lo esta, que le informe si tiene q hacer alguna presentacion, luego ponerle tabs interiores para q elijan: home(cronograma/inscribirse), clases, presentaciones, consultas
+
+	- style the nav with tabs but without bootstrap, which doesn't work
 
 
 *JAPANESE-STYLED WEBSITE DESIGN?*
