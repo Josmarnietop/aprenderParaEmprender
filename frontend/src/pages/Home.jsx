@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import fotoportada from "../img/fotoportada.jpg";
 import Alert from 'react-bootstrap/Alert';
 import axios from "axios";
-import defaultimg from "../img/defaultimg.jpg";
+//import defaultimg from "../img/defaultimg.jpg";
 import fondo from "../img/background.jpg";
 import alumnos1 from "../img/galeria/alumnos1.jpg";
 import alumnos2 from "../img/galeria/alumnos2.jpg";

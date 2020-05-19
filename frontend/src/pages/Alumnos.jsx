@@ -1,9 +1,16 @@
 //@ts-check
 import React from 'react';
-import axios from "axios";
+//import axios from "axios";
 import Container from 'react-bootstrap/Container';
 import Alert from 'react-bootstrap/Alert';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Form from 'react-bootstrap/Form';
 import fondo from "../img/background.jpg";
+import cronograma from "../img/alumnos/cronograma 2019.jpg";
+import canvasalumno from "../img/alumnos/canvasalumno.jpg";
+import canvaspublico1 from "../img/alumnos/canvaspublico1.jpg";
+import canvaspublico2 from "../img/alumnos/canvaspublico2.jpg";
 import {
     BrowserRouter as Router,
     Switch,
@@ -28,7 +35,7 @@ export default function Alumnos() {
                 Ultima noticia bla bla bla
         </Alert>
             <Router>
-                <div className="w-100">                    
+                <div className="w-100">
                     <ul className="nav nav-pills nav-fill border-bottom p-2">
                         <li className="nav-item">
                             <Link to="/" className="text-white border rounded-top p-2">Cronograma</Link>
@@ -63,17 +70,53 @@ export default function Alumnos() {
     )
 }
 function Cronograma() {
-    return <h2>Cronograma</h2>;
+    return (
+
+        <Row className='my-3 d-flex flex-row p-3'>
+            <img src={cronograma} alt="" className="img-fluid w-100" />
+        </Row>
+    )
 }
 
 function Clases() {
-    return <h2>Clases</h2>;
+    return (
+
+        <Row className='my-3 d-flex flex-row p-3'>
+            <img src={cronograma} alt="" className="img-fluid w-100" />
+        </Row>
+    )
 }
 
 function Presentaciones() {
-    return <h2>Presentaciones</h2>;
+    return (
+
+        <Row className='my-3 d-flex flex-row p-3'>
+            <Col>
+                <h3 className="text-white">Subi Tu Presentacion</h3>
+                <Form className="m-3">
+                    <Form.File
+                        id="custom-file"
+                        label="Custom file input"
+                        custom
+                    />
+                </Form>
+                <img src={canvasalumno} alt="" className="img-fluid w-100" />
+            </Col>
+
+            <Col>
+                <h3 className="text-white">Mira Las Presentaciones De Tus Compañeros</h3>
+                <img src={canvaspublico1} alt="" className="img-fluid w-100" />
+                <img src={canvaspublico2} alt="" className="img-fluid w-100" />
+            </Col>
+        </Row>
+    )
 }
 
 function Consultas() {
-    return <h2>Consultas</h2>;
+    return (
+
+        <Row className='my-3 d-flex flex-row p-3'>
+            <img src={cronograma} alt="" className="img-fluid w-100" />
+        </Row>
+    )
 }
