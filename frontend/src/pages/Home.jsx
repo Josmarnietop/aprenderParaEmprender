@@ -11,6 +11,9 @@ import Alert from 'react-bootstrap/Alert';
 import axios from "axios";
 import defaultimg from "../img/defaultimg.jpg";
 import fondo from "../img/background.jpg";
+import alumnos1 from "../img/galeria/alumnos1.jpg";
+import alumnos2 from "../img/galeria/alumnos2.jpg";
+import alumnos3 from "../img/galeria/alumnos3.jpg";
 
 export default function Home() {
   const [links, setLinks] = useState([]);
@@ -46,7 +49,7 @@ export default function Home() {
 
       <Row className='my-3 d-flex flex-row'>
         <Col className='p-2 border border-success'>
-          <img src={fotoportada} alt="" className="img-fluid" />
+          <img src={fotoportada} alt="" className="img-fluid w-100" />
         </Col>
         {/* <Col sm={8} className='p-2 border border-success'>
           ultima noticia publica
@@ -137,13 +140,13 @@ export default function Home() {
           <Carousel.Item className="w-100">
             <div className="card bg-dark text-white w-100">
               <div style={{
-                backgroundImage: `url(${defaultimg})`,
+                backgroundImage: `url(${alumnos1})`,
                 backgroundPosition: "center center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 height: "auto",
+                minHeight: "30vw",
                 width: "auto",
-                minHeight: "15rem",
                 margin: "auto"
               }}>
                 <h5 className="card-title">Card title</h5>
@@ -160,13 +163,13 @@ export default function Home() {
           <Carousel.Item >
             <div className="card bg-dark text-white">
               <div style={{
-                backgroundImage: `url(${defaultimg})`,
+                backgroundImage: `url(${alumnos2})`,
                 backgroundPosition: "center center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 height: "auto",
+                minHeight: "30vw",
                 width: "auto",
-                minHeight: "15rem",
                 margin: "auto"
               }}>
                 <h5 className="card-title">Card title</h5>
@@ -183,13 +186,13 @@ export default function Home() {
           <Carousel.Item >
             <div className="card bg-dark text-white">
               <div style={{
-                backgroundImage: `url(${defaultimg})`,
+                backgroundImage: `url(${alumnos3})`,
                 backgroundPosition: "center center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 height: "auto",
+                minHeight: "30vw",
                 width: "auto",
-                minHeight: "15rem",
                 margin: "auto"
               }}>
                 <h5 className="card-title">Card title</h5>

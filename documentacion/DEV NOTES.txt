@@ -1,7 +1,5 @@
 
-- en la pagina de alumnos, un alert arriba para q informe si no esta inscripto, y si lo esta, que le informe si tiene q hacer alguna presentacion, luego ponerle tabs interiores para q elijan: home(cronograma/inscribirse), clases, presentaciones, consultas
-
-	- style the nav with tabs but without bootstrap, which doesn't work
+- en la pagina de alumnos, un alert arriba para q informe si no esta inscripto, y si lo esta, que le informe si tiene q hacer alguna presentacion
 
 
 *JAPANESE-STYLED WEBSITE DESIGN?*
