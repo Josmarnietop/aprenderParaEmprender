@@ -1,5 +1,9 @@
+- terminar de hacer el llenado fake de la pagina de alumnos
+- hacer el llenado fake del home en los cursos y concursos
 
 - en la pagina de alumnos, un alert arriba para q informe si no esta inscripto, y si lo esta, que le informe si tiene q hacer alguna presentacion
+
+
 
 
 *JAPANESE-STYLED WEBSITE DESIGN?*

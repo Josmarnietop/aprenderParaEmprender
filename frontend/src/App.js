@@ -24,32 +24,32 @@ export default function App() {
         <Navbar bg="dark" variant="dark" expand="md" >
 
           <Link to="/">
-            <img src={logo} alt="" width="50" height="50" />
+            <img src={logo} alt="" width="50" height="50" className="my-2" />
           </Link>
           {/* <Navbar.Brand href="#home">
         </Navbar.Brand> */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav fill className="mr-auto align-items-center w-100">
-              <Nav.Item>
+              <Nav.Item className="mb-3">
                 <Link to="/articulos" className='text-wrap p-2 text-center  text-white'>Articulos</Link>
               </Nav.Item>
-              <Nav.Item>
+              <Nav.Item className="mb-3">
                 <Link to="/links" className='text-wrap p-2 text-center  text-white'>Seguir Aprendiendo</Link>
               </Nav.Item>
-              <Nav.Item>
+              <Nav.Item className="mb-3">
                 <Link to="/concursos" className='text-wrap p-2 text-center  text-white'>Concursos</Link>
               </Nav.Item>
-              <Nav.Item>
+              <Nav.Item className="mb-3">
                 <Link to="/egresados" className='text-wrap p-2 text-center  text-white'>Egresados FAU</Link>
               </Nav.Item>
-              <Nav.Item>
+              <Nav.Item className="mb-3">
                 <Link to="/trabajos" className='text-wrap p-2 text-center  text-white'>Bolsa de Trabajo</Link>
               </Nav.Item>
-              <Nav.Item>
+              <Nav.Item className="mb-3">
                 <Link to="/emprendedores" className='text-wrap p-2 text-center  text-white'>Emprendedores</Link>
               </Nav.Item>
-              <Nav.Item>
+              <Nav.Item className="mb-3">
                 <Link to="/alumnos" className='text-wrap p-2 text-center  text-white'>Login Alumnos</Link>
               </Nav.Item>
               {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
