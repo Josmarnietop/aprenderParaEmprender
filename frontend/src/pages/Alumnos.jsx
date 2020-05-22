@@ -33,7 +33,7 @@ export default function Alumnos() {
             paddingBottom: "1%"
         }}>
             <Alert variant='info' className='mt-3'>
-               Constanza, tienes pendiente de subir tu presentacion de Canvas
+                Constanza, tienes pendiente de subir tu presentacion de Canvas
         </Alert>
             <Router>
                 <div className="w-100">
@@ -144,7 +144,7 @@ function Consultas() {
                 </Form.Group>*/}
                 <Form.Group controlId="exampleForm.ControlTextarea1" >
                     <Form.Label className="text-white">Dejanos Tu Consulta</Form.Label>
-                    <Form.Control as="textarea" rows="3"  />
+                    <Form.Control as="textarea" rows="3" />
                     <Button variant="dark" className="my-3">Enviar Consulta</Button>
                 </Form.Group>
             </Form>

@@ -14,6 +14,8 @@ import fondo from "../img/background.jpg";
 import alumnos1 from "../img/galeria/alumnos1.jpg";
 import alumnos2 from "../img/galeria/alumnos2.jpg";
 import alumnos3 from "../img/galeria/alumnos3.jpg";
+import empdelaño from "../img/concursos/empdelaño.jpg";
+import conferencia from "../img/cursos/conferencia.jpg";
 
 export default function Home() {
   const [links, setLinks] = useState([]);
@@ -48,23 +50,20 @@ export default function Home() {
   </Alert>
 
       <Row className='my-3 d-flex flex-row'>
-        <Col className='p-2 border border-success'>
+        <Col className='p-3'>
           <img src={fotoportada} alt="" className="img-fluid w-100" />
         </Col>
-        {/* <Col sm={8} className='p-2 border border-success'>
-          ultima noticia publica
-</Col> */}
       </Row>
       <Row className='my-3'>
+        <Col>
         <Carousel>
           {links.map((link) => (
             <Carousel.Item
-              key={link._id}
-              className="flex justify-between p-2 cursor-pointer"
+            key={link._id}
+            className="flex justify-between cursor-pointer"
             >
               <Card style={{ width: '100%' }}>
                 <div className="row p-3">
-
                   <div className="col-md-4 p-5" style={{
                     backgroundImage: `url(${link.imagen})`,
                     backgroundPosition: "center center",
@@ -84,58 +83,68 @@ export default function Home() {
                   </Card.Body>
                 </div>
               </Card>
-              {/* <img src={link.imagen} alt='imagen' className="img-fluid" max-height="100em" />
-              <h5>{link.titulo}</h5>
-              <a href={`${link.urlLink}`} >{link.urlLink}</a> */}
             </Carousel.Item>
           ))}
-          {/* <Carousel.Item>
-             <img
-              className="d-block w-100"
-            src={defaultimg}
-              alt="First slide"
-            /> 
-
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-             <img
-              className="d-block w-100"
-              src={defaultimg}
-              alt="Third slide"
-            /> 
-
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-             <img
-              className="d-block w-100"
-              src={defaultimg}
-              alt="Third slide"
-            /> 
-
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </Carousel.Caption>
-          </Carousel.Item> */}
         </Carousel>
+          </Col>
       </Row>
       <Row className='d-flex flex-row my-3'>
-        <Col className='col p-2 border border-success'>
-          cursos
-</Col>
-        <Col className='col p-2 border border-success'>
-          concursos
-</Col>
+        <Col className="mb-3">
+          <Card style={{ width: '100%' }}>
+            <div className="row p-2">
+              <div style={{
+                backgroundImage: `url(${conferencia})`,
+                backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                width: "15rem",
+                height: "15rem",
+                margin: "auto"
+              }}>
+              </div>
+              <Card.Body>
+                <Card.Title style={{
+                  minHeight: "5vw", textOverflow: "ellipsis", 
+                  overflow: "hidden", minWidth: "0", display: "-webkit-box", webkitLineClamp: "2", webkitBoxOrient: "vertical"
+                }}>Conferencia para emprendedores</Card.Title>
+                <Card.Text style={{
+                  maxHeight: "30vw", textOverflow: "ellipsis", 
+                  overflow: "hidden", minWidth: "0", display: "-webkit-box", webkitLineClamp: "3", webkitBoxOrient: "vertical"
+                }}> <b>Martes 5/05 – 21.00 hs. Google Meet.</b> Conferencia gratuita a emprendedores, a cargo de Lucy Vilte, gerente de Ecohotel Purmamarca, mentora y directora de programas para emprendedores. </Card.Text>
+                <Button variant="primary" href="https://www.unsta.edu.ar/economia/lucy-vilte-conferencia-para-emprendedores/">Leer Mas</Button>
+              </Card.Body>
+            </div>
+          </Card>
+        </Col>
+        <Col>
+          <Card style={{ width: '100%' }}>
+            <div className="row p-2">
+              <div style={{
+                backgroundImage: `url(${empdelaño})`,
+                backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                width: "15rem",
+                height: "15rem",
+                margin: "auto"
+              }}>
+              </div>
+              <Card.Body>
+                <Card.Title style={{
+                  minHeight: "5vw", textOverflow: "ellipsis", 
+                  overflow: "hidden", minWidth: "0", display: "-webkit-box", webkitLineClamp: "2", webkitBoxOrient: "vertical"
+                }}>Se abrió la convocatoria para una nueva edición del Emprendedor del Año</Card.Title>
+                <Card.Text style={{
+                  maxHeight: "30vw", textOverflow: "ellipsis", 
+                  overflow: "hidden", minWidth: "0", display: "-webkit-box", webkitLineClamp: "3", webkitBoxOrient: "vertical"
+                }}>El certamen premia el espíritu emprendedor a través de proyectos que impacten en el crecimiento económico y social de todas las provincias del país. Hay tiempo para inscribirse hasta el 17 de julio.</Card.Text>
+                <Button variant="primary" href="https://www.argentina.gob.ar/noticias/se-abrio-la-convocatoria-para-una-nueva-edicion-del-emprendedor-del-ano">Leer Mas</Button>
+              </Card.Body>
+            </div>
+          </Card>
+        </Col>
       </Row>
-      <Row className='my-3'>
+      <Row className='my-3 p-3'>
         <Carousel className=" d-flex align-items-center justify-content-center w-100">
           <Carousel.Item className="w-100">
             <div className="card bg-dark text-white w-100">
@@ -145,20 +154,13 @@ export default function Home() {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 height: "auto",
-                minHeight: "30vw",
+                minHeight: "50vw",
                 width: "auto",
                 margin: "auto"
               }}>
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p className="card-text">Last updated 3 mins ago</p>
+                <p className="card-text invisible">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               </div>
             </div>
-
-            <Carousel.Caption >
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item >
             <div className="card bg-dark text-white">
@@ -168,20 +170,13 @@ export default function Home() {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 height: "auto",
-                minHeight: "30vw",
+                minHeight: "50vw",
                 width: "auto",
                 margin: "auto"
               }}>
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p className="card-text">Last updated 3 mins ago</p>
+                <p className="card-text invisible">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               </div>
             </div>
-
-            <Carousel.Caption >
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item >
             <div className="card bg-dark text-white">
@@ -191,20 +186,13 @@ export default function Home() {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 height: "auto",
-                minHeight: "30vw",
+                minHeight: "50vw",
                 width: "auto",
                 margin: "auto"
               }}>
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p className="card-text">Last updated 3 mins ago</p>
+                <p className="card-text invisible">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               </div>
             </div>
-
-            <Carousel.Caption >
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
       </Row>
