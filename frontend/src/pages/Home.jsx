@@ -56,37 +56,37 @@ export default function Home() {
       </Row>
       <Row className='my-3'>
         <Col>
-        <Carousel>
-          {links.map((link) => (
-            <Carousel.Item
-            key={link._id}
-            className="flex justify-between cursor-pointer"
-            >
-              <Card style={{ width: '100%' }}>
-                <div className="row p-3">
-                  <div className="col-md-4 p-5" style={{
-                    backgroundImage: `url(${link.imagen})`,
-                    backgroundPosition: "center center",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    width: "15rem",
-                    height: "15rem",
-                    margin: "auto"
-                  }}>
+          <Carousel>
+            {links.map((link) => (
+              <Carousel.Item
+                key={link._id}
+                className="flex justify-between cursor-pointer"
+              >
+                <Card style={{ width: '100%' }}>
+                  <div className="row p-3">
+                    <div className="col-md-4 p-5" style={{
+                      backgroundImage: `url(${link.imagen})`,
+                      backgroundPosition: "center center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                      width: "15rem",
+                      height: "15rem",
+                      margin: "auto"
+                    }}>
+                    </div>
+                    <Card.Body className="col-md-8">
+                      <Card.Title>{link.titulo}</Card.Title>
+                      <Card.Text>
+                        {link.contenido}
+                      </Card.Text>
+                      <Button variant="primary" href={`${link.urlLink}`}>Leer Mas</Button>
+                    </Card.Body>
                   </div>
-                  <Card.Body className="col-md-8">
-                    <Card.Title>{link.titulo}</Card.Title>
-                    <Card.Text>
-                      {link.contenido}
-                    </Card.Text>
-                    <Button variant="primary" href={`${link.urlLink}`}>Leer Mas</Button>
-                  </Card.Body>
-                </div>
-              </Card>
-            </Carousel.Item>
-          ))}
-        </Carousel>
-          </Col>
+                </Card>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </Col>
       </Row>
       <Row className='d-flex flex-row my-3'>
         <Col className="mb-3">
@@ -104,11 +104,11 @@ export default function Home() {
               </div>
               <Card.Body>
                 <Card.Title style={{
-                  minHeight: "5vw", textOverflow: "ellipsis", 
+                  minHeight: "5vw", textOverflow: "ellipsis",
                   overflow: "hidden", minWidth: "0", display: "-webkit-box", webkitLineClamp: "2", webkitBoxOrient: "vertical"
                 }}>Conferencia para emprendedores</Card.Title>
                 <Card.Text style={{
-                  maxHeight: "30vw", textOverflow: "ellipsis", 
+                  maxHeight: "30vw", textOverflow: "ellipsis",
                   overflow: "hidden", minWidth: "0", display: "-webkit-box", webkitLineClamp: "3", webkitBoxOrient: "vertical"
                 }}> <b>Martes 5/05 – 21.00 hs. Google Meet.</b> Conferencia gratuita a emprendedores, a cargo de Lucy Vilte, gerente de Ecohotel Purmamarca, mentora y directora de programas para emprendedores. </Card.Text>
                 <Button variant="primary" href="https://www.unsta.edu.ar/economia/lucy-vilte-conferencia-para-emprendedores/">Leer Mas</Button>
@@ -131,11 +131,11 @@ export default function Home() {
               </div>
               <Card.Body>
                 <Card.Title style={{
-                  minHeight: "5vw", textOverflow: "ellipsis", 
+                  minHeight: "5vw", textOverflow: "ellipsis",
                   overflow: "hidden", minWidth: "0", display: "-webkit-box", webkitLineClamp: "2", webkitBoxOrient: "vertical"
                 }}>Se abrió la convocatoria para una nueva edición del Emprendedor del Año</Card.Title>
                 <Card.Text style={{
-                  maxHeight: "30vw", textOverflow: "ellipsis", 
+                  maxHeight: "30vw", textOverflow: "ellipsis",
                   overflow: "hidden", minWidth: "0", display: "-webkit-box", webkitLineClamp: "3", webkitBoxOrient: "vertical"
                 }}>El certamen premia el espíritu emprendedor a través de proyectos que impacten en el crecimiento económico y social de todas las provincias del país. Hay tiempo para inscribirse hasta el 17 de julio.</Card.Text>
                 <Button variant="primary" href="https://www.argentina.gob.ar/noticias/se-abrio-la-convocatoria-para-una-nueva-edicion-del-emprendedor-del-ano">Leer Mas</Button>

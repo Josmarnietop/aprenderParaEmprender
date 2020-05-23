@@ -7,12 +7,12 @@ import {
   Link
 } from "react-router-dom";
 import Home from "./pages/Home";
-import Alumnos from "./pages/Alumnos";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from "./img/logo.jpg";
 //import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
+import Login from "./pages/Login";
 
 
 export default function App() {
@@ -85,7 +85,7 @@ export default function App() {
               <About />
             </Route>
             <Route path="/alumnos">
-              <Alumnos />
+              <Login />
             </Route>
             <Route path="/">
               <Home />
