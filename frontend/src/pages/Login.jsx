@@ -7,6 +7,10 @@ import Button from 'react-bootstrap/Button';
 import desktop from "../img/desktop.jpg";
 
 export default function Login() {
+    const handleClick = ()=>{
+        localStorage.setItem("logged", JSON.stringify(true));
+        localStorage.setItem("tipoUsuario", JSON.stringify("alumno"));
+    }
     return (
         <div className="d-flex justify-content-center h-100 p-5" style={{backgroundImage: `url(${desktop})`,
         backgroundPosition: "center center",
@@ -30,7 +34,7 @@ export default function Login() {
                         <Form.Group controlId="formBasicCheckbox">
                             <Form.Check className="text-white" type="checkbox" label="Recordarme" />
                         </Form.Group>
-                        <Button className="text-black" type="submit" style={{backgroundColor: "#66cc99"}}>
+                        <Button onClick={handleClick} className="text-black" type="submit" style={{backgroundColor: "#66cc99"}}>
                             Ingresar
   </Button>
                     </Form>
