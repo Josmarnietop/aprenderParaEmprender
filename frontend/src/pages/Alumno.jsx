@@ -19,7 +19,7 @@ import {
     Link
 } from "react-router-dom";
 
-export default function Alumnos() {
+export default function Cuenta() {
     return (
         <Container style={{
             backgroundImage: `url(${fondo})`,

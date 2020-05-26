@@ -1,6 +1,16 @@
-- hacer el login
+- hacer el login/
 
-- hacer el private route con el router
+- hacer el private route con el router//
+
+- hacer el site del admin
+	- control de que presento cada alummno en formato tabla
+	- inputgroup para subir los links/cursos/concursos
+	- inputgroup para subir las clases
+	- inpoutgroup para subir el cronograma
+ 	- un lugar donde le salgan las consultas y pueda responderlas
+
+
+- en la pagina de alumnos, mod el mini site de consultas para q puedan ver las consultas de los demas alumnos
 
 - en la pagina de alumnos, un alert arriba para q informe si no esta inscripto, y si lo esta, que le informe si tiene q hacer alguna presentacion
 

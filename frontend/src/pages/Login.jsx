@@ -5,11 +5,18 @@ import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import desktop from "../img/desktop.jpg";
+import {
+  useHistory
+  } from "react-router-dom";
+
 
 export default function Login() {
-    const handleClick = ()=>{
+    let history = useHistory();
+
+    const handleClick = (...rest)=>{
         localStorage.setItem("logged", JSON.stringify(true));
         localStorage.setItem("tipoUsuario", JSON.stringify("alumno"));
+        history.push("/cuenta")
     }
     return (
         <div className="d-flex justify-content-center h-100 p-5" style={{backgroundImage: `url(${desktop})`,

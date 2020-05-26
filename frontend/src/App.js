@@ -7,15 +7,21 @@ import {
   Link
 } from "react-router-dom";
 import Home from "./pages/Home";
+import Cuenta from "./pages/Cuenta";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from "./img/logo.jpg";
 //import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import Login from "./pages/Login";
+import PrivateRoute from "./pages/PrivateRoute";
 
 
 export default function App() {
+  //const isLogged = JSON.parse(localStorage.getItem("logged"));
+ // const tipoUsuarioLogged = JSON.parse(localStorage.getItem("tipoUsuario"));
+
+
   return (
     <Router>
       <div style={{ backgroundColor: "#2eaf7d" }}>
@@ -50,7 +56,7 @@ export default function App() {
                 <Link to="/emprendedores" className='text-wrap p-2 text-center  text-white'>Emprendedores</Link>
               </Nav.Item>
               <Nav.Item className="mb-3">
-                <Link to="/alumnos" className='text-wrap p-2 text-center  text-white'>Login Alumnos</Link>
+                <Link to="/cuenta" className='text-wrap p-2 text-center text-white'>Mi Cuenta</Link>
               </Nav.Item>
               {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -63,11 +69,12 @@ export default function App() {
           </Navbar.Collapse>
         </Navbar>
         <div>
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
           <Switch>
             <Route path="/articulos">
               <Home />
+            </Route>
+            <Route path="/login">
+              <Login />
             </Route>
             <Route path="/links">
               <Home />
@@ -84,9 +91,9 @@ export default function App() {
             <Route path="/emprendedores">
               <About />
             </Route>
-            <Route path="/alumnos">
-              <Login />
-            </Route>
+            <PrivateRoute path="/cuenta">
+              <Cuenta />
+            </PrivateRoute>
             <Route path="/">
               <Home />
             </Route>
