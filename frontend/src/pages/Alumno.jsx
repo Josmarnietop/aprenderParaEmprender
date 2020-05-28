@@ -7,19 +7,30 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Carousel from 'react-bootstrap/Carousel';
 import fondo from "../img/background.jpg";
 import cronograma from "../img/alumnos/cronograma 2019.jpg";
 import canvasalumno from "../img/alumnos/canvasalumno.jpg";
 import canvaspublico1 from "../img/alumnos/canvaspublico1.jpg";
 import canvaspublico2 from "../img/alumnos/canvaspublico2.jpg";
+import clase19_10_28 from "../img/reuniones/clase19_10_28.jpeg";
+import clase19_10_21 from "../img/reuniones/clase19_10_21.jpeg";
+import clase19_10_04 from "../img/reuniones/clase19_10_04.jpeg";
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    useHistory
 } from "react-router-dom";
 
 export default function Cuenta() {
+    let history = useHistory();
+    const handleClickLogout = () => {
+        localStorage.removeItem("logged");
+        localStorage.removeItem("tipoUsuario");
+        history.push("/")
+    }
     return (
         <Container style={{
             backgroundImage: `url(${fondo})`,
@@ -49,6 +60,9 @@ export default function Cuenta() {
                         </li>
                         <li className="nav-item mb-2  mx-5">
                             <Link to="/consultas" className="text-white border rounded-top p-2">Consultas</Link>
+                        </li>
+                        <li className="nav-item mt-3 mb-2  mx-5">
+                            <span className="text-white border rounded-top p-2" onClick={handleClickLogout}>Cerrar Sesion</span>
                         </li>
                     </ul>
                     <Switch>
@@ -83,25 +97,47 @@ function Clases() {
     return (
 
         <Row className='my-3 d-flex flex-row p-3'>
-            <h5 className="text-white">Clase del 18-04-2020</h5>
-            <p className="text-white">
-                JUEGO DE CREATIVIDAD DE IDEAS CREATIVAS DE EMPRENDIMIENTO
-            </p>
-            <p className="text-white">
-                -2 palabras para proponer el emprendimiento: DISEÑO y CALCULO
-            </p>
-            <p className="text-white">
-                -1 palabra para darle valor agregado: ECONOMICO
-                </p>
-            <p className="text-white">
-                -PROBLEMA: los arquitectos no nos dedicamos al DISEÑO y CALCULO estructural que normalmente lo delegamos a los ingenieros. Pero además es una tercerización muy costosa.
-                </p>
-            <p className="text-white">
-                -SOLUCION: arquitectos que se dediquen al DISEÑO y CALCULO estructural para tercerizar entre sus colegas arquitectos, lo que significa una especialización en el área.
-                </p>
-            <p className="text-white">
-                -PROPUESTA DE VALOR: Realizarlo lo más rápido posible, con “entregas a las 24hs”, con honorarios más ECONOMICOS que se disminuirán en la medida que el mismo colega encargue más cálculos y las obras sean de mayor envergadura ya que obtendrán un beneficio adicional que se irá incrementando al sumarse más encargos.
-                </p>
+            <Carousel className=" d-flex align-items-center justify-content-center w-100">
+                <Carousel.Item className="w-100">
+                    <div className="card bg-dark text-white w-100">
+                        <div style={{
+                            backgroundImage: `url(${clase19_10_28})`,
+                            backgroundPosition: "center center",
+                            backgroundRepeat: "no-repeat",
+                            backgroundSize: "cover",
+                            height: "auto",
+                            minHeight: "50vw",
+                            width: "auto",
+                            margin: "auto"
+                        }}>
+                            <p className="card-text invisible">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </Carousel.Item>
+                <Carousel.Item >
+                    <div className="card bg-dark text-white">
+                        <div style={{
+                            backgroundImage: `url(${clase19_10_21})`,
+                            backgroundPosition: "center center",
+                            backgroundRepeat: "no-repeat",
+                            backgroundSize: "cover",
+                            height: "auto",
+                            minHeight: "50vw",
+                            width: "auto",
+                            margin: "auto"
+                        }}>
+                            <p className="card-text invisible">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </Carousel.Item>
+                <Carousel.Item >
+                    <img
+                        className="w-100"
+                        src={clase19_10_04}
+                        alt="Third slide"
+                    />
+                </Carousel.Item>
+            </Carousel>
         </Row>
     )
 }

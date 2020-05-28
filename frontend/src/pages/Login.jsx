@@ -13,7 +13,7 @@ import {
 export default function Login() {
     let history = useHistory();
 
-    const handleClick = (...rest)=>{
+    const handleClick = () => {
         localStorage.setItem("logged", JSON.stringify(true));
         localStorage.setItem("tipoUsuario", JSON.stringify("alumno"));
         history.push("/cuenta")
