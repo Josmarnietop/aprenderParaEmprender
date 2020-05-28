@@ -97,7 +97,7 @@ function Clases() {
     return (
 
         <Row className='my-3 d-flex flex-row p-3'>
-            <Carousel className=" d-flex align-items-center justify-content-center w-100">
+            <Carousel interval={50000000} className=" d-flex align-items-center justify-content-center w-100">
                 <Carousel.Item className="w-100">
                     <div className="card bg-dark text-white w-100">
                         <div style={{
