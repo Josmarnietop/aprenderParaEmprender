@@ -5,6 +5,7 @@ import axios from "axios";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import desktop from "../img/desktop.jpg";
+import Alert from 'react-bootstrap/Alert';
 import {
     useHistory
 } from "react-router-dom";
@@ -15,6 +16,7 @@ export default function Login() {
     const [email, setEmail] = useState([]);
     const [contraseña, setContraseña] = useState([]);
     let history = useHistory();
+    const [mensajeAlert, setMensajeAlert] = useState("No estas logueado aun")
 
     useEffect(() => {
         const fetchUsers = async () => {
@@ -32,16 +34,16 @@ export default function Login() {
     const handleChangeEmail = e => setEmail(e.target.value);
     const handleChangeContraseña = e => setContraseña(e.target.value);
 
-    const handleClick = () => {
+    const handleClick = e => {
+        e.preventDefault();
         const usuario = users.find(usuario => usuario.email === email);
-        console.log(usuario);
         if (usuario) {
             if (usuario.contraseña === contraseña) {
                 localStorage.setItem("logged", JSON.stringify(true));
                 localStorage.setItem("tipoUsuario", JSON.stringify("alumno"));
                 history.push("/cuenta")
-            } else { }
-        } else { history.push("/") }
+            } else { setMensajeAlert("Contraseña Incorrecta") }
+        } else { setMensajeAlert("Usuario Inexistente") }
     }
     return (
         <div className="d-flex justify-content-center h-100 p-5" style={{
@@ -71,7 +73,11 @@ export default function Login() {
                         <Button onClick={handleClick} className="text-black" type="submit" style={{ backgroundColor: "#66cc99" }}>
                             Ingresar
   </Button>
+
                     </Form>
+                    <Alert variant='danger' className='mt-3'>
+                        {mensajeAlert}
+                    </Alert>
                 </Card.Body>
             </Card>
 
