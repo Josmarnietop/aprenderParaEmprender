@@ -1,12 +1,30 @@
-- hacer el login/
+* mod login para q sea con validacion del usuario via backend
+	- como hacer la validacion buscando dentro del objeto q traje versus lo ingresado por el usuario
 
-- hacer el private route con el router//
+* agregar un signup button en el login y su correspondiente site para hacer el signup
+
+- agregar las fotos de las docentes y su descripcion: 
+MSC. Arq. LUCIA TOPPA
+Profesora Titular
+Construcciones 1 
+FAU-UNT
+
+Arq. VANESA SAEZ            
+Auxiliar Graduado                     
+Construcciones 1                      
+FAU-UNT
+
+Arq. MARIANA LEGORBURU         
+      Auxiliar Graduado                      
+     Construcciones 1                         
+          FAU-UNT
+
 
 - hacer el site del admin
 	- control de que presento cada alummno en formato tabla
 	- inputgroup para subir los links/cursos/concursos
 	- inputgroup para subir las clases
-	- inpoutgroup para subir el cronograma
+	- inputgroup para subir el cronograma
  	- un lugar donde le salgan las consultas y pueda responderlas
 
 

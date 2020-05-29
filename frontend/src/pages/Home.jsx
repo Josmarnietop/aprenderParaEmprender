@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import fotoportada from "../img/fotoportada.jpg";
-import Alert from 'react-bootstrap/Alert';
+//import Alert from 'react-bootstrap/Alert';
 import axios from "axios";
 //import defaultimg from "../img/defaultimg.jpg";
 import fondo from "../img/background.jpg";
@@ -45,9 +45,9 @@ export default function Home() {
       paddingTop: "1%",
       paddingBottom: "1%"
     }}>
-      <Alert variant='info' className='mt-3'>
+      {/* <Alert variant='info' className='mt-3'>
         Ultima noticia bla bla bla
-  </Alert>
+  </Alert> */}
 
       <Row className='my-3 d-flex flex-row'>
         <Col className='p-3'>

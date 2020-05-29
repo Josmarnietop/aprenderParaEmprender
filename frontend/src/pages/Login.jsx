@@ -1,7 +1,7 @@
 //@ts-check
-import React from 'react';
-//import Alumnos from "././pages/Alumnos";
+import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
+import axios from "axios";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import desktop from "../img/desktop.jpg";
@@ -11,8 +11,27 @@ import {
 
 
 export default function Login() {
+    const [users, setUsers] = useState([]);
+    const [email, setEmail] = useState([]);
+    const [contraseña, setContraseña] = useState([]);
     let history = useHistory();
 
+    useEffect(() => {
+        const fetchUsers = async () => {
+          try {
+            const response = await axios.get("http://localhost:3000/users/login");
+            console.log(response.data);
+            setUsers(response.data);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+        fetchUsers();
+      }, []);
+
+      const handleChangeEmail = e => setEmail(e.target.value);
+      const handleChangeContraseña = e => setContraseña(e.target.value);
+    
     const handleClick = () => {
         localStorage.setItem("logged", JSON.stringify(true));
         localStorage.setItem("tipoUsuario", JSON.stringify("alumno"));
@@ -33,10 +52,10 @@ export default function Login() {
                 <Card.Body>
                     <Form>
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Control type="email" placeholder="Email" />
+                            <Form.Control type="email" placeholder="Email" value={email} onChange={handleChangeEmail} />
                         </Form.Group>
                         <Form.Group controlId="formBasicPassword">
-                            <Form.Control type="password" placeholder="Contraseña" />
+                            <Form.Control type="password" placeholder="Contraseña" value={contraseña} onChange={handleChangeContraseña} />
                         </Form.Group>
                         <Form.Group controlId="formBasicCheckbox">
                             <Form.Check className="text-white" type="checkbox" label="Recordarme" />
