@@ -75,8 +75,15 @@ export default function Home() {
                     }}>
                     </div>
                     <Card.Body className="col-md-8">
-                      <Card.Title>{link.titulo}</Card.Title>
-                      <Card.Text>
+                      <Card.Title style={{
+                  minHeight: "50px", textOverflow: "ellipsis",
+                  overflow: "hidden", minWidth: "0", display: "-webkit-box", webkitLineClamp: "2", webkitBoxOrient: "vertical"
+                }}>{link.titulo}</Card.Title>
+                      <Card.Text style={{
+                  maxHeight: "30vw",
+                  minHeight: "70px",textOverflow: "ellipsis",
+                  overflow: "hidden", minWidth: "0", display: "-webkit-box", webkitLineClamp: "3", webkitBoxOrient: "vertical"
+                }}>
                         {link.contenido}
                       </Card.Text>
                       <Button variant="primary" href={`${link.urlLink}`}>Leer Mas</Button>
@@ -108,6 +115,7 @@ export default function Home() {
                   overflow: "hidden", minWidth: "0", display: "-webkit-box", webkitLineClamp: "2", webkitBoxOrient: "vertical"
                 }}>Conferencia para emprendedores</Card.Title>
                 <Card.Text style={{
+                  minHeight: "70px",
                   maxHeight: "30vw", textOverflow: "ellipsis",
                   overflow: "hidden", minWidth: "0", display: "-webkit-box", webkitLineClamp: "3", webkitBoxOrient: "vertical"
                 }}> <b>Martes 5/05 – 21.00 hs. Google Meet.</b> Conferencia gratuita a emprendedores, a cargo de Lucy Vilte, gerente de Ecohotel Purmamarca, mentora y directora de programas para emprendedores. </Card.Text>
@@ -135,6 +143,7 @@ export default function Home() {
                   overflow: "hidden", minWidth: "0", display: "-webkit-box", webkitLineClamp: "2", webkitBoxOrient: "vertical"
                 }}>Se abrió la convocatoria para una nueva edición del Emprendedor del Año</Card.Title>
                 <Card.Text style={{
+                  minHeight: "70px",
                   maxHeight: "30vw", textOverflow: "ellipsis",
                   overflow: "hidden", minWidth: "0", display: "-webkit-box", webkitLineClamp: "3", webkitBoxOrient: "vertical"
                 }}>El certamen premia el espíritu emprendedor a través de proyectos que impacten en el crecimiento económico y social de todas las provincias del país. Hay tiempo para inscribirse hasta el 17 de julio.</Card.Text>
